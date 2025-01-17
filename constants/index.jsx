@@ -1,3 +1,5 @@
+import { Book } from "lucide-react";
+
 export const NavLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -24,5 +26,83 @@ export const secondSectionData = [
     description:
       "We offer female Quran teachers for women and young girls, providing a comfortable and supportive learning environment for all.",
     image: "/muslim.png",
+  },
+];
+
+// export const servicesData = [
+//   {
+//     icon: "/rec.png",
+//     heading: "ONLINE QURAN RECITATION",
+//     description:
+//       "We offer high-quality construction services for all your building needs.",
+//   },
+//   {
+//     icon: "/nor.png",
+//     heading: "NOORANI QAIDA",
+//     description:
+//       "Professional painting services with a focus on precision and quality.",
+//   },
+//   {
+//     icon: "/trans.png",
+//     heading: "QURAN TRANSLATION",
+//     description:
+//       "Expert repair services for all kinds of machinery and appliances.",
+//   },
+//   {
+//     icon: "/book1.png",
+//     heading: "QURAN TAFSEER",
+//     description:
+//       "Reliable transportation and logistics services to move goods safely.",
+//   },
+//   {
+//     icon: "/kid.png",
+//     heading: "QURAN NAZRA AND HIFZ",
+//     description:
+//       "Comprehensive cleaning services for both residential and commercial spaces.",
+//   },
+//   {
+//     icon: "/pray.png",
+//     heading: "SALAH/PRAYER",
+//     description:
+//       "Experienced electricians ready to handle all your electrical needs.",
+//   },
+// ];
+
+export const servicesData = [
+  {
+    icon: "/rec.png",
+    heading: "ONLINE QURAN RECITATION",
+    description:
+      "Join our expert-led online Quran recitation classes to perfect your recitation skills with Tajweed and proper pronunciation.",
+  },
+  {
+    icon: "/nor.png",
+    heading: "NOORANI QAIDA",
+    description:
+      "Learn the fundamentals of Quranic Arabic with our structured Noorani Qaida courses, ideal for beginners and children.",
+  },
+  {
+    icon: "/trans.png",
+    heading: "QURAN TRANSLATION",
+    description:
+      "Understand the Quran in your language with our detailed and easy-to-follow Quran translation classes taught by qualified teachers.",
+  },
+  {
+    icon: "/book1.png",
+    heading: "QURAN TAFSEER",
+    description:
+      "Dive deeper into the meaning of the Quran with our Tafseer sessions, which provide insights into its teachings and context.",
+  },
+  {
+    icon: "/kid.png",
+    heading: "QURAN NAZRA AND HIFZ",
+    description:
+      "Memorize the Quran with our step-by-step Hifz programs, or improve fluency with guided Nazra reading sessions for all age groups.",
+  },
+  {
+    icon: "/pray.png",
+    heading: "SALAH/PRAYER",
+    description:
+      "Enhance your understanding and practice of Salah with our comprehensive guidance on the rules and importance of prayer in Islam.",
   },
 ];

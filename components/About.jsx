@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 export default function About() {
   return (
-    <div className="min-h-[80vh] flex items-center justify-center border-t border-b mb-20 bg-gray-100/45">
+    <div className="min-h-[80vh] flex items-center justify-center border-t border-b  bg-gray-100/45">
       <div className="max-w-6xl mx-auto md:flex-row flex-col gap-8 flex items-center justify-between py-16 px-6">
         <div className="md:w-1/2 w-full flex flex-col justify-between h-full items-stretch gap-6">
           <h2 className="border-l-4 pl-2 border-primary md:text-xl font-semibold">
