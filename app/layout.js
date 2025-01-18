@@ -7,6 +7,8 @@ import Services from "@/components/Services";
 import Register from "@/components/Register";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
+import TopBanner from "@/components/TopBanner";
+
 // import "react-toastify/dist/ReactToastify.css";
 
 const poppins = Poppins({
@@ -35,6 +37,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
         <ToastContainer />
+        <TopBanner />
         <Navbar />
         <Hero />
         <main className="max-w-6xl mx-auto px-6">{children}</main>

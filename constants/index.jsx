@@ -1,9 +1,10 @@
 import { Book } from "lucide-react";
 
 export const NavLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Contact us", href: "#contact" },
   //   { name: "Blog", href: "/blog" },
 
   //   { name: "Contact", href: "/contact" },

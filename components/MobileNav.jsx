@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -13,9 +14,11 @@ import { NavLinks } from "@/constants";
 import Link from "next/link";
 
 export default function MobileNav() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="md:hidden block">
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="outline">
             <Menu />
@@ -28,12 +31,12 @@ export default function MobileNav() {
           <div className="flex flex-col items-center justify-center gap-4 mt-6">
             {NavLinks.map((item, idx) => (
               <Link
-                key={idx} // Key is correctly applied to the Link element
+                key={idx}
                 className="text-lg text-muted-foreground font-semibold p-1 hover:bg-primary hover:text-white rounded-md transition-all duration-300"
                 href={item.href}
+                onClick={() => setOpen(false)}
               >
                 {item.name}
-                <hr />
               </Link>
             ))}
           </div>

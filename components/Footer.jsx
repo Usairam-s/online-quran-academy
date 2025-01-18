@@ -52,10 +52,16 @@ export default function Footer() {
       });
   };
   return (
-    <div className="bg-gradient-to-r from-slate-900 to-slate-700  w-full text-white ">
+    <div
+      className="bg-gradient-to-r from-slate-900 to-slate-700  w-full text-white "
+      id="contact"
+    >
       {/* muhammaduseram@gmail.com */}
       <p className="text-center pt-10 pb-4 md:text-5xl text-4xl font-semibold ">
         Contact Us
+      </p>
+      <p className="text-center text-muted-foreground">
+        You can send message to our email or whatsapp us
       </p>
       <div className="max-w-6xl  p-8 mx-auto flex md:justify-between md:flex-row flex-col md:gap-40 gap-6">
         <form onSubmit={onSubmit} className=" w-full flex flex-col gap-4">
@@ -75,12 +81,17 @@ export default function Footer() {
         "
         >
           <h2 className="md:text-3xl text-2xl font-semibold  uppercase">
-            Connect with us by our
+            Whatsapp us
           </h2>
-          <Label className="md:text-lg text-base font-medium">
-            Social Channels
-          </Label>
-          <Instagram size={30} />
+          <Button className="w-fit  rounded-none text-lg bg-black hover:bg-slate-800 text-white">
+            <a
+              className="flex items-center gap-2"
+              href="https://wa.me/923280214877"
+              target="_blank"
+            >
+              <img src="/wap.png" alt="icons" className="size-8" /> Click here
+            </a>
+          </Button>
         </div>
       </div>
     </div>

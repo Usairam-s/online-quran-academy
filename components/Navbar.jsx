@@ -1,7 +1,7 @@
 import { NavLinks } from "@/constants";
 import Link from "next/link";
 import React from "react";
-import { Button } from "./ui/button";
+
 import MobileNav from "./MobileNav";
 
 export default function Navbar() {
@@ -9,7 +9,7 @@ export default function Navbar() {
     <>
       <div className="py-6 border-b shadow-md">
         <div className="flex items-center w-full justify-between max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-20">
+          <div className="flex items-center gap-40">
             <h2 className="md:text-2xl font-semibold text-xl">
               Quran Academy{" "}
             </h2>
@@ -26,7 +26,8 @@ export default function Navbar() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Button>Contact Us</Button>
+            {/* <Button>Contact Us</Button> */}
+            {/* <ModeToggle /> */}
             <MobileNav />
           </div>
         </div>

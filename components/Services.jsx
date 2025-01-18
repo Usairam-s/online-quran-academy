@@ -5,7 +5,10 @@ import ServiceCard from "./ServiceCard";
 
 export default function Services() {
   return (
-    <div className="min-h-screen mb-12 py-20 bg-repeat w-full h-full text-primary-100  heropattern-architect-gray-100">
+    <div
+      className="min-h-screen mb-12 py-20 bg-repeat w-full h-full text-primary-100  heropattern-architect-gray-100"
+      id="services"
+    >
       <div className="max-w-6xl flex flex-col items-center md:gap-16 gap-10 mx-auto px-4">
         <div className=" w-full flex flex-col  items-center gap-4">
           <h2 className="border-l-4 pl-2 border-primary md:text-xl font-semibold">

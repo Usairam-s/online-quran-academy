@@ -1,16 +1,45 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Hero() {
+  const images = ["/main1.jpg", "/main2.jpg", "/main3.jpg"]; // Add image paths
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Change image every 7 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 7000); // Change every 7 seconds
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div
-      style={{
-        backgroundImage: "url('/main1.jpg')", // Replace with your image path
-        backgroundSize: "cover", // Ensures the image covers the entire div
-        backgroundPosition: "center", // Centers the image
-      }}
       className="min-h-screen relative rounded-b-xl shadow-xl overflow-hidden"
+      id="home"
     >
+      {/* Framer Motion Image Container */}
+      <AnimatePresence mode="sync">
+        <motion.div
+          key={currentImage}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            opacity: { duration: 3, ease: "easeInOut" }, // Smooth fade in/out
+          }}
+          style={{
+            backgroundImage: `url(${images[currentImage]})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "absolute",
+            inset: 0,
+            zIndex: -1,
+          }}
+        />
+      </AnimatePresence>
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
