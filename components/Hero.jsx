@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   const images = ["/main1.jpg", "/main2.jpg", "/main3.jpg"]; // Add image paths
@@ -17,7 +18,7 @@ export default function Hero() {
 
   return (
     <div
-      className="min-h-screen relative rounded-b-xl shadow-xl overflow-hidden"
+      className="min-h-screen relative w-full rounded-b-xl shadow-xl overflow-hidden"
       id="home"
     >
       {/* Framer Motion Image Container */}
@@ -49,14 +50,16 @@ export default function Hero() {
           ONLINE QURAN ACADEMY
         </h2>
         <h1 className="lg:text-5xl font-semibold max-w-[700px] md:text-4xl text-3xl">
-          Quran Pak For All Person Of World
+          Learn Quran Online Anytime Anywhere
         </h1>
         <p className="text-sm md:text-base max-w-[700px] text-gray-400">
           Learn the Quran with expert guidance in a convenient online
           environment. Our courses are designed for all ages and levels, helping
           you connect with the Quran effectively and meaningfully.
         </p>
-        <Button className="px-10 w-fit font-semibold">Contact us</Button>
+        <Button className="px-10 w-fit font-semibold" asChild>
+          <Link href={"#contact"}>Contact us</Link>
+        </Button>
       </div>
     </div>
   );

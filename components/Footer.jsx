@@ -60,7 +60,7 @@ export default function Footer() {
       <p className="text-center pt-10 pb-4 md:text-5xl text-4xl font-semibold ">
         Contact Us
       </p>
-      <p className="text-center text-muted-foreground">
+      <p className="text-center px-8 text-muted-foreground">
         You can send message to our email or whatsapp us
       </p>
       <div className="max-w-6xl  p-8 mx-auto flex md:justify-between md:flex-row flex-col md:gap-40 gap-6">
