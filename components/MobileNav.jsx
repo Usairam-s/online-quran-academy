@@ -1,18 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
-import { Button } from "./ui/button";
+import { Menu, X } from "lucide-react";
 import { NavLinks } from "@/constants";
 
 export default function MobileNav() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -33,37 +25,51 @@ export default function MobileNav() {
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
-    setOpen(false);
+    setIsOpen(false);
     window.location.hash = href.slice(1);
   };
 
   return (
     <div className="md:hidden block">
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger asChild>
-          <Button variant="outline">
-            <Menu />
-          </Button>
-        </SheetTrigger>
-        <SheetContent className="pt-24">
-          <SheetHeader>
-            <SheetTitle className="text-2xl">Quran Academy</SheetTitle>
-          </SheetHeader>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="p-2 text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+        aria-label="Toggle menu"
+      >
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
 
-          <div className="flex flex-col items-center justify-center gap-4 mt-6">
-            {NavLinks.map((item, idx) => (
-              <a
-                key={idx}
-                className="text-lg text-muted-foreground font-semibold p-1 hover:bg-primary hover:text-white rounded-md transition-all duration-300 cursor-pointer"
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+      {isOpen && (
+        <div className="fixed inset-0 z-50 bg-white">
+          <div className="flex flex-col h-full">
+            <div className="flex justify-between items-center p-4 border-b">
+              <h2 className="text-2xl font-semibold">Quran Academy</h2>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-2 text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                aria-label="Close menu"
               >
-                {item.name}
-              </a>
-            ))}
+                <X size={24} />
+              </button>
+            </div>
+            <nav className="flex-grow">
+              <ul className="flex flex-col items-center justify-center h-full gap-6">
+                {NavLinks.map((item, idx) => (
+                  <li key={idx}>
+                    <a
+                      className="text-xl text-gray-800 hover:text-primary transition-colors duration-300"
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
-        </SheetContent>
-      </Sheet>
+        </div>
+      )}
     </div>
   );
 }
