@@ -5,10 +5,13 @@ import { motion } from "framer-motion";
 
 export default function Register() {
   return (
-    <div className="md:min-h-[80vh] min-h-[50vh] py-16 flex items-center justify-center border-t border-b  bg-gray-100/45">
+    <div
+      id="startlearning"
+      className="md:min-h-[80vh] min-h-[50vh] py-16 flex items-center justify-center border-t border-b  bg-gray-100/45"
+    >
       <div className="max-w-6xl w-full mx-auto md:flex-row flex-col gap-8 flex items-center justify-between  px-6">
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, x: -30 }}
           transition={{ duration: 2 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -23,10 +26,10 @@ export default function Register() {
           </div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: 30 }}
           transition={{ duration: 2 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.4 }}
           className="md:w-1/2 w-full flex flex-col justify-between h-full items-stretch gap-6"
         >
           <h2 className="border-l-4 pl-2 border-primary md:text-xl font-semibold">

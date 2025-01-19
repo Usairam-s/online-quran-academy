@@ -43,7 +43,7 @@ export default function Services() {
             visible: {
               opacity: 1, // Parent visible state
               transition: {
-                staggerChildren: 0.5, // Controls the delay between children animations
+                staggerChildren: 0.2, // Controls the delay between children animations
               },
             },
           }}
@@ -56,7 +56,7 @@ export default function Services() {
                 hidden: { opacity: 0, y: 40 }, // Child initial state
                 visible: { opacity: 1, y: 0 }, // Child visible state
               }}
-              transition={{ duration: 0.4 }} // Adjust child animation duration
+              transition={{ duration: 1 }} // Adjust child animation duration
             >
               <ServiceCard item={item} />
             </motion.div>

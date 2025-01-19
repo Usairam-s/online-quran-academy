@@ -14,7 +14,7 @@ export default function About() {
     >
       <div className="max-w-6xl mx-auto md:flex-row flex-col gap-8 flex items-center justify-between py-16 px-6">
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, x: -30 }}
           transition={{ duration: 2 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -54,7 +54,7 @@ export default function About() {
           </Button>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: 30 }}
           transition={{ duration: 2 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}

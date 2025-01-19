@@ -18,7 +18,7 @@ export default function Hero() {
 
   return (
     <div
-      className="min-h-screen relative w-full rounded-b-xl shadow-xl overflow-hidden"
+      className="min-h-screen relative w-full rounded-b-xl shadow-xl overflow-hidden overflow-x-hidden"
       id="home"
     >
       {/* Framer Motion Image Container */}

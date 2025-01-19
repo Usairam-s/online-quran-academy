@@ -1,9 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -11,10 +10,32 @@ import {
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { NavLinks } from "@/constants";
-import Link from "next/link";
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 0);
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setOpen(false);
+    window.location.hash = href.slice(1);
+  };
 
   return (
     <div className="md:hidden block">
@@ -28,16 +49,17 @@ export default function MobileNav() {
           <SheetHeader>
             <SheetTitle className="text-2xl">Quran Academy</SheetTitle>
           </SheetHeader>
+
           <div className="flex flex-col items-center justify-center gap-4 mt-6">
             {NavLinks.map((item, idx) => (
-              <Link
+              <a
                 key={idx}
-                className="text-lg text-muted-foreground font-semibold p-1 hover:bg-primary hover:text-white rounded-md transition-all duration-300"
+                className="text-lg text-muted-foreground font-semibold p-1 hover:bg-primary hover:text-white rounded-md transition-all duration-300 cursor-pointer"
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
         </SheetContent>

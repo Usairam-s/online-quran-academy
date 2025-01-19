@@ -7,9 +7,9 @@ import MobileNav from "./MobileNav";
 export default function Navbar() {
   return (
     <>
-      <div className="py-6 border-b shadow-md">
+      <div className="md:py-6 py-4 border-b shadow-md">
         <div className="flex items-center w-full justify-between max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-40">
+          <div className="flex items-center gap-28">
             <h2 className="md:text-2xl font-semibold text-xl">
               Quran Academy{" "}
             </h2>
