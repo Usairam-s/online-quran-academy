@@ -72,16 +72,22 @@ export const secondSectionData = [
 
 export const servicesData = [
   {
+    icon: "/studies.png",
+    heading: "ISLAMIC STUDIES",
+    description:
+      "Explore the rich teachings of Islam, including history, ethics, and spirituality, through engaging and interactive lessons.",
+  },
+  {
+    icon: "/inter.png",
+    heading: "QURAN INTERPRETATION",
+    description:
+      "Gain a deeper understanding of the Quran's verses with our interpretation sessions that focus on clarity and context.",
+  },
+  {
     icon: "/rec.png",
     heading: "ONLINE QURAN RECITATION",
     description:
       "Join our expert-led online Quran recitation classes to perfect your recitation skills with Tajweed and proper pronunciation.",
-  },
-  {
-    icon: "/nor.png",
-    heading: "NOORANI QAIDA",
-    description:
-      "Learn the fundamentals of Quranic Arabic with our structured Noorani Qaida courses, ideal for beginners and children.",
   },
   {
     icon: "/trans.png",
@@ -100,6 +106,12 @@ export const servicesData = [
     heading: "QURAN NAZRA AND HIFZ",
     description:
       "Memorize the Quran with our step-by-step Hifz programs, or improve fluency with guided Nazra reading sessions for all age groups.",
+  },
+  {
+    icon: "/nor.png",
+    heading: "NOORANI QAIDA",
+    description:
+      "Learn the fundamentals of Quranic Arabic with our structured Noorani Qaida courses, ideal for beginners and children.",
   },
   {
     icon: "/pray.png",
